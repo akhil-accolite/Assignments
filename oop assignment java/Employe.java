@@ -66,6 +66,13 @@ class developer extends employee{
 
 }
 
+class worker extends employee{
+
+    worker(){
+        System.out.println("worker employee will execute polymorphism");
+    }
+}
+
 class Main{
 
     public static void main(String[] args) {
@@ -77,7 +84,8 @@ class Main{
         m.addMan("overriding manager", 123123);//
 
         employee e = new employee();
-        
+        employee ew = new worker();//---------------->>>>>>>>>>>polymorphism example
+
         e.retriveCompany();
         e.retriveCompany(1); //overloaded method called
         e.nothing(123, "someguy");
