@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from implementService WSDL service -->
+
+  <service name="implement" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://SOAPcrud.com"/>
+      <parameter name="wsdlServiceElement" value="implementService"/>
+      <parameter name="schemaQualified" value="http://SOAPcrud.com"/>
+      <parameter name="wsdlServicePort" value="implement"/>
+      <parameter name="className" value="com.SOAPcrud.implement"/>
+      <parameter name="wsdlPortType" value="implement"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://SOAPcrud.com" xmlns:retNS="http://SOAPcrud.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="update" qname="operNS:update" returnQName="retNS:updateReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://SOAPcrud.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+        <parameter xmlns:pns="http://SOAPcrud.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:string"/>
+        <parameter xmlns:pns="http://SOAPcrud.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:age" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://SOAPcrud.com" xmlns:retNS="http://SOAPcrud.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="read" qname="operNS:read" returnQName="retNS:readReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://SOAPcrud.com" xmlns:retNS="http://SOAPcrud.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="delete" qname="operNS:delete" returnQName="retNS:deleteReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://SOAPcrud.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://SOAPcrud.com" xmlns:retNS="http://SOAPcrud.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="create" qname="operNS:create" returnQName="retNS:createReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://SOAPcrud.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+        <parameter xmlns:pns="http://SOAPcrud.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:string"/>
+        <parameter xmlns:pns="http://SOAPcrud.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:age" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="read update create delete"/>
+
+  </service>
+</deployment>
