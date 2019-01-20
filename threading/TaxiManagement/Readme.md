@@ -7,5 +7,5 @@ However to implement person generation and checking directly uncomment the lines
 persons generate every 3 seconds,taxi generates every 10 seconds, persons checks for taxis every 3 seconds
 (implemented using Scheduled executor service)
 
-threads for generating person,generating taxi
+threads for generating person,generating taxi///////
 threads for taxi queue and person queue
