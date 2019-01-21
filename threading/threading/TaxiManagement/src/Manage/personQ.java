@@ -43,7 +43,7 @@ public class personQ implements Runnable {
 				if(p.getpLocation()==t.getLocation()) {
 					System.out.println("passenger "+p.getpName()+" alloted taxi number "+t.getNumber());
 					t.updatePassengerNo(1);
-					//pq.remove(p);
+					pq.remove(p);
 					System.out.println("taxi with taxi number {"+t.getNumber()+"} has "+t.getPassengerNo()+" passengers now");
 				}
 				else {

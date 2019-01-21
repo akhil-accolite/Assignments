@@ -9,7 +9,7 @@ public class generatePerson implements Runnable {
 		// TODO Auto-generated method stub
 
 		Random r = new Random();
-		String randomName = "QWERTYUIOPLKJHGFDSAZXCVBNM";
+		String randomName = "QWERTY";
 
 		Person p = new Person(randomName.charAt(r.nextInt(randomName.length())), r.nextInt(5));
 
