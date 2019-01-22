@@ -1,5 +1,7 @@
 package hibernate.pojo;
 
+import java.util.ArrayList;
+import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -14,7 +16,7 @@ public class App {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		Session session = factory.openSession();
 		session.beginTransaction();
-		
+
 //		Student s = new Student();
 //		s.setId(1);
 //		s.setName("akhil");
@@ -28,20 +30,28 @@ public class App {
 //		c.setStudentId(1);
 //		
 //		session.save(c);
-		
+
 		Criteria cr = session.createCriteria(Student.class);
 		Criteria crc = session.createCriteria(Course.class);
-		
-		
+
 ////////////////////////////return name with id = 1
-		cr.add(Restrictions.eq("id",1)); 
-		
+		cr.add(Restrictions.eq("id", 1));
+
 ////////////////////////////return list with id = 1 and course = java	
-		crc.add(Restrictions.disjunction().add(Restrictions.eq("studentId",1)).add(Restrictions.eq("courseName", "java")));
+		crc.add(Restrictions.disjunction().add(Restrictions.eq("studentId", 1))
+				.add(Restrictions.eq("courseName", "java")));
+		
+		List<Student> s = cr.list();
 		
 		
-		System.out.println(cr.list().toString());
-		System.out.println(crc.list().toString());
+////////////////////////////return join with id = 1 restriction and getting all courses for the given id		
+		for (Student student : s) {
+			System.out.println(student.getName() + "|" + student.getId() + "|"
+					+ (!student.getCourses().isEmpty() ? student.getCourses().get(1).getCourseName() : ""));
+		}
+//
+//		System.out.println(cr.list().toString());
+//		System.out.println(crc.list().toString());
 		session.getTransaction().commit();
 
 	}

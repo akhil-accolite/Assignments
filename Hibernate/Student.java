@@ -23,6 +23,17 @@ public class Student {
 	 @OneToMany(mappedBy="studentId", fetch=FetchType.EAGER) 
 	  public List<Course> courses;
 	
+	 
+	 public List<Course> getCourses() {
+		
+		 return courses;
+	}
+	 
+	 public void setCourses(List<Course> course) {
+		
+		 this.courses = course;
+	}
+	 
 	public int getId() {
 		return id;
 	}
