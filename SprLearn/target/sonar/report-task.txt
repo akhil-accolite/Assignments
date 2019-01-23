@@ -1,0 +1,6 @@
+projectKey=learn:SprLearn
+serverUrl=http://localhost:9000
+serverVersion=7.5.0.20543
+dashboardUrl=http://localhost:9000/dashboard?id=learn%3ASprLearn
+ceTaskId=AWh509ysV37qoBSxWiSY
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AWh509ysV37qoBSxWiSY
