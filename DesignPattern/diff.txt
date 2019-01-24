@@ -1,0 +1,21 @@
+The Abstract Factory pattern similar to the Factory Method pattern but he main difference between the two is that with the Abstract Factory pattern, a class delegates the responsibility of object instantiation to another object via composition whereas the Factory Method pattern uses inheritance and relies on a subclass to handle the desired object instantiation.
+
+
+abstract factory
+..A system should be independent of how its products are created,
+composed, and represented
+..What they're saying is that there is an object A, who wants to make a Foo object. Instead of making the Foo object itself (e.g., with a factory method), it's going to get a different object (the abstract factory) to create the Foo object
+
+
+factory
+..A class wants its subclasses to specify the objects it create
+..an object is calling its own factory method here
+
+Factory Method is used to create one product only but Abstract Factory is about creating families of related or dependent products.
+
+Factory Method pattern hides the construction of single object where as Abstract factory method hides the construction of a family of related objects. Abstract factories are usually implemented using (a set of) factory methods.
+
+{{{{{{{{{{So basically in Abstract Factory method the model files are not visible to client but via the abstract methods}}}}}}}}}
+
+
+check implementation for the difference via code
