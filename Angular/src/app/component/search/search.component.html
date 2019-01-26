@@ -1,0 +1,15 @@
+<!-- <p class="sectionheader jumbotron">
+  Search Page
+
+  <span *ngIf="book && book.bookName"> {{book.bookName}}</span>
+</p> -->
+
+
+<div class="jumbotron">
+    <ul>
+        <li *ngFor="let book of books">
+            <a [routerLink]="['/book', book.id]"> {{ book.bookName }} </a>
+            <button (click)="sendbtoc(book)">add to cart</button>
+        </li>
+    </ul>
+</div>

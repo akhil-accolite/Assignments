@@ -1,0 +1,7 @@
+<div>
+  <ol>
+    <li *ngFor="let book of books">
+      <span *ngIf="book && book.title">{{book.title}}</span>
+    </li>
+  </ol>
+</div>
