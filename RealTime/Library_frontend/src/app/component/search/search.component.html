@@ -1,0 +1,9 @@
+<div>
+    <ul>
+        <li *ngFor="let book of books">
+            <a>{{book.bookName}}</a><br>
+            <button (click)="addToCart(book)">Add To Cart</button>
+        </li>
+    </ul>
+    <button class="checkout" routerLink="/cart" routerLinkActive="active">CHECKOUT</button>
+</div>
